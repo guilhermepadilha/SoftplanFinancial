@@ -13,7 +13,7 @@ namespace Financial.WebApi.Controllers
     
     [Route("api/financial")]
     [ApiController]
-    public class FinancialController : ControllerBase
+    public class FinancialController : Controller
     {
         private readonly IFinancialAppService _financialAppService;
 
