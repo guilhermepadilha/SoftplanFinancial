@@ -1,6 +1,7 @@
 ﻿using Financial.Application;
 using Financial.Application.Interface;
 using Financial.Domain.Interface;
+using Financial.Domain.Interface.Services;
 using Financial.Domain.Services;
 using Financial.Service;
 using Financial.Service.Interface;
@@ -9,6 +10,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RepoGit.Application;
+using RepoGit.Application.Interface;
+using RepoGit.Domain.Interface;
+using RepoGit.Domain.Interface.Services;
+using RepoGit.Domain.Services;
+using RepoGit.Infra.Data;
 
 namespace Financial
 {
@@ -29,6 +36,10 @@ namespace Financial
             services.AddTransient<IFinancialAppService, FinancialAppService>();
             services.AddTransient<IFinancialService, FinancialService>();
             services.AddTransient<IBacenFacade, BacenFacade>();
+
+            services.AddTransient<IRepoGitAppService, RepoGitAppService>();
+            services.AddTransient<IRepoGitService, RepoGitService>();
+            services.AddTransient<IRepoGitRepository, RepoGitRepository>();
 
         }
 

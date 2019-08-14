@@ -12,7 +12,8 @@ namespace Financial.WebApi.Controllers
 {
     
     [Route("api/financial")]
-    public class FinancialController : Controller
+    [ApiController]
+    public class FinancialController : ControllerBase
     {
         private readonly IFinancialAppService _financialAppService;
 
@@ -23,18 +24,17 @@ namespace Financial.WebApi.Controllers
 
         [HttpGet]
         [Route("calculajuros")]
-        public ActionResult<Task> CalculoJuros(double valorInicial, int tempo)
+        public async Task<JuroComposto>  CalculoJuros([FromQuery]double valorInicial, [FromQuery]int meses)
         {
             try
             {
-                valorInicial = 100;
-                tempo = 1;
-                var valorCalculado = _financialAppService.CalculaJuro(valorInicial, tempo);
+                
+                var valorCalculado = await _financialAppService.CalculaJuro(valorInicial, meses);
                 return valorCalculado;
             }
             catch (System.Exception ex)
             {
-                return BadRequest(ex);
+                throw ex;
             }
         }
     }

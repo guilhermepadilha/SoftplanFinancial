@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Financial.Application\Financial.Application.csproj" />
+    <ProjectReference Include="..\RepoGit.Application\RepoGit.Application.csproj" />
+    <ProjectReference Include="..\RepoGit.Infra.Data\RepoGit.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,10 +11,10 @@ namespace Financial.Service
     {
         public BacenFacade()
         {
-            
+
         }
 
-        
+
         public async Task<TaxaJuro> GetTaxaJuro()
         {
             try
@@ -22,8 +22,8 @@ namespace Financial.Service
                 HttpClient client = new HttpClient();
                 string url = "http://localhost:5000/api/bacen/taxaJuro/";
                 //var response = await client.GetStringAsync(url);
-                var response = await client.GetAsync(url);
-                return JsonConvert.DeserializeObject<TaxaJuro>(response.RequestMessage.ToString());                
+                var response = await client.GetStringAsync(url);
+                return JsonConvert.DeserializeObject<TaxaJuro>(response);
             }
             catch (Exception ex)
             {

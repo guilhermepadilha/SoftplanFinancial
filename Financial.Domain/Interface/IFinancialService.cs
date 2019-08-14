@@ -1,7 +1,7 @@
 ﻿using Financial.Domain.Entities;
 using System.Threading.Tasks;
 
-namespace Financial.Domain.Interface
+namespace Financial.Domain.Interface.Services
 {
     public interface IFinancialService
     {

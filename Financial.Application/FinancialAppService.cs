@@ -1,6 +1,7 @@
 ﻿using Financial.Application.Interface;
 using Financial.Domain.Entities;
 using Financial.Domain.Interface;
+using Financial.Domain.Interface.Services;
 using System.Threading.Tasks;
 
 namespace Financial.Application
