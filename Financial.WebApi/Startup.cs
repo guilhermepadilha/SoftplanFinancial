@@ -1,6 +1,5 @@
 ﻿using Financial.Application;
 using Financial.Application.Interface;
-using Financial.Domain.Interface;
 using Financial.Domain.Interface.Services;
 using Financial.Domain.Services;
 using Financial.Service;
@@ -34,13 +33,12 @@ namespace Financial
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<IFinancialAppService, FinancialAppService>();
-            services.AddTransient<IFinancialService, FinancialService>();
+            services.AddTransient<IFinancialService, FinancialService>();            
             services.AddTransient<IBacenFacade, BacenFacade>();
-
             services.AddTransient<IRepoGitAppService, RepoGitAppService>();
             services.AddTransient<IRepoGitService, RepoGitService>();
             services.AddTransient<IRepoGitRepository, RepoGitRepository>();
-
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
